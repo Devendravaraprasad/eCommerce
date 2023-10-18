@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>E-commerce website</title>
+	<script src="https://kit.fontawesome.com/1ff2bafd28.js" crossorigin="anonymous"></script>
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+	<style>
+        @import url('httpps://fonts.googleapis.com/css2?family=Spartan:weight@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+h4{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1{
+    padding: 40px 80px;
+}
+
+.section-m1{
+    margin: 40px 0;
+}
+
+body{
+    width: 100%;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: #E3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#header a{
+    text-decoration: none;
+    font-size: 23px;
+    width: bold;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+#navbar li a:hover,
+#navbar li a.active{
+    color: blue;
+}
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#mobile{
+    display: none;
+    align-items: center;
+}
+
+#close{
+    display: none;
+}
+
+#hero{
+    background-image: url('https://th.bing.com/th/id/OIP.EFHLcwi7cho69AygkWRbiwHaEK?pid=ImgDet&rs=1');
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+#hero h4{
+    padding-bottom: 10px;
+    color: aliceblue;
+}
+#hero h1{
+    color:aliceblue;
+}
+#hero h2{
+    color: mintcream;
+}
+#hero p{
+    color: aliceblue;
+}
+#hero button{
+    background-image: url('images/button.png');
+    background-color: gold;
+    color: #fff;
+    padding: 14px 80px 14px 65px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+#feature{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#feature .fe-box{
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+#feature .fe-box:hover{
+    box-shadow: 10px 10px 54px rgba(0, 0, 0, 0.1);
+}
+
+#feature .fe-box img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#feature .fe-box h6{
+    display: inline-block;
+    padding: 8px 7px 5px 7px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #088178;
+    background-color: #fddde4;
+}
+
+#feature .fe-box:nth-child(2) h6{
+    background-color: #cdebbc;
+}
+#feature .fe-box:nth-child(3) h6{
+    background-color: #46cdc2;
+}
+#feature .fe-box:nth-child(4) h6{
+    background-color: #bddf28;
+}
+#feature .fe-box:nth-child(5) h6{
+    background-color: #60eab3;
+}
+#product1{
+    text-align: center;
+}
+
+#product1 .pro-container {
+display: flex;
+justify-content: space-between;
+padding-top: 20px;
+flex-wrap: wrap;
+}
+#product1 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid  #cce7d0;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(221, 221, 219);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+    /* left: 10px; */
+}
+
+#product1 .pro:hover{
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+#product1 .pro img{
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+}
+#product1 .pro .des{
+    text-align: start;
+    padding: 10px 0; 
+}
+
+#product1 .pro .des h5{
+    padding-top: 7px;
+    color:#1a1a1a;
+    font-size: 14px;
+}
+
+#product1 .pro .des h4{
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+ #product1 .pro a{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    font-weight: 500;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+} 
+
+#banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('https://media.istockphoto.com/photos/pakistani-mithai3-picture-id506620063?k=6&m=506620063&s=612x612&w=0&h=HCJcvJc6ON4r12hBDYdbi3RcJk6UdA75OCW-1vWXBsw=');
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner h3{
+    color: #fff;
+    font-size: 16px;
+}
+
+#banner h1{
+    color: #fff;
+    font-size: 40px;
+    padding: 10px 0;
+}
+
+#banner h1 span{
+    color: blue;
+    font-size: 35px;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #E3E6F3;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .follow{
+    margin-top: 10px;
+}
+
+footer .follow i{
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer;
+}
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+footer .follow i:hover,
+footer a:hover{
+    color: #0512ff;
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+    </style>
+</head>
+<body>
+	<section id="header">
+		<a href="#" class="logo"> <i class="fa-solid fa-cookie-bite"></i> <strong>DEVDAR </strong>Sweets </a>
+		<div>
+			<ul id="navbar">
+				<li><a class="active" href="index.html">Home</a></li>
+				<li><a href="shop.html">Shop</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+                <span id="username"></span> 
+                <li><a href="#" id="signoutlink">Sign Out</a></li>
+				<!-- <li><a href="./SignIn/signIn.html">Sign in</a></li> -->
+				<!-- <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li> -->
+				<a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+			</ul>
+		</div>
+		<div id="mobile">
+			<a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+			<i id="bar" class="fas fa-outdent"></i>
+		</div>
+	</section>
+	<section id="hero">
+		<h4>Your favorite sweets</h4>
+		<h2>Super value offers</h2>
+		<h1>On all products</h1>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, non tempore.</p>
+		<a href="shop.html"><button>Shop Now</button></a>
+	</section>
+	<section id="feature" class="section-p1">
+		<div class="fe-box">
+			<img src="images/f2.png">
+			<h6>Free Shipping</h6>
+		</div>
+		<div class="fe-box">
+			<img src="images/f3.png">
+			<h6>Save Money</h6>
+		</div>
+		<div class="fe-box">
+			<img src="https://safoodbank.org/wp-content/uploads/2018/05/Vegetarian-Icon.png" height="100">
+			<h6>100% Vegetarion</h6>
+		</div>
+		<div class="fe-box">
+			<img src="images/f5.png">
+			<h6>Happy Customers</h6>
+		</div>
+		<div class="fe-box">
+			<img src="https://cdn-icons-png.flaticon.com/128/3082/3082101.png" height="100">
+			<h6>Hygienic </h6>
+		</div>
+		<div class="fe-box">
+			<img src="https://tshirtsandallstore.com/wp-content/uploads/2020/02/pick-up-in-store.jpg" height="100">
+			<h6>In-store pickup</h6>
+		</div>
+	</section>
+	<section id="product1">
+		<h2>Featured Products</h2>
+		<p>Pariatur repudiandae inventore molestiae nemo iste rem ratione!</p>
+		<div class="pro-container">
+			<div class="pro">
+				<img src="https://www.bigbasket.com/media/uploads/p/l/800389791_1-anand-sweets-and-savouries-sweets-motichoor-laddu.jpg" alt="Motichhor Ladu" hei>
+				<div class="des">
+					<h5>Motichhor Ladu</h5> 
+					<h4>RS.630 / KG</h4>
+				</div>
+				<a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+			</div>	
+		
+			<div class="pro">
+				<img src="https://s4.scoopwhoop.com/anj2/5dad55a250758d1cac506980/0ee1479c-d032-4822-89d2-3d008e78ec5c.jpg" alt="Kaaju kutli">
+				<div class="des">
+					<h5>Kaaju katli</h5> 
+					<h4>RS.1100 / KG</h4>
+				</div>
+				<a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+			</div>	
+			<div class="pro">
+				<img src="https://th.bing.com/th/id/OIP.PUYwpPQK4XfALwdM-yGlEQHaHa?pid=ImgDet&rs=1" alt="Mysore Pak">
+				<div class="des">
+					<h5>Ghee Mysore Pak</h5> 
+					<h4>RS.800 / KG</h4>
+				</div>
+				<a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+			</div>	
+			<div class="pro">
+				<img src="https://5.imimg.com/data5/MB/OS/GLADMIN-32407285/dharwad-peda-500x500.png" alt="Dharwad Peda">
+				<div class="des">
+					<h5>Dharwad Peda</h5> 
+					<h4>RS.500 / KG</h4>
+				</div>
+				<a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+			</div>	
+			<div class="pro">
+				<img src="https://th.bing.com/th/id/OIP.jF7Y9tl57asLk_NACTZ7cAHaHa?pid=ImgDet&rs=1" alt="Champakali">
+				<div class="des">
+					<h5>Champakali</h5> 
+					<h4>RS.450 / KG</h4>
+				</div>
+				<a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+			</div>	
+			<div class="pro">
+				<img src="https://th.bing.com/th/id/R.bb405ada6767ddb6d825c73b7fa3e2e4?rik=NMPYoBqSdlAj4Q&riu=http%3a%2f%2fwww.niryasa.in%2fadmin%2fimages%2fproducts%2frasgulla.jpg&ehk=AWLW9BgkR8rNyMz7gftLOIrgCDIPrHMleNr34g%2bdil0%3d&risl=&pid=ImgRaw&r=0" alt="Rasgulla">
+				<div class="des">
+					<h5>Rasgulla</h5> 
+					<h4>RS.700 / KG</h4>
+				</div>
+				<a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+			</div>	
+			<div class="pro">
+				<img src="https://th.bing.com/th/id/OIP.CiKhYzEmiYy_eoVkrT9RyAHaHa?pid=ImgDet&w=1200&h=1200&rs=1" alt="Dhoodh Peda">
+				<div class="des">
+					<h5>Dhood Peda</h5> 
+					<h4>RS.900 / KG</h4>
+				</div>
+				<a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+			</div>	
+			<div class="pro">
+				<img src="https://equisential.in/wp-content/uploads/2021/07/Dry-Fruit-3-1-1536x1536.jpg" alt="Dry Fruit Laddu">
+				<div class="des">
+					<h5>Dry Fruit Laddu</h5> 
+					<h4>RS.2000 / KG</h4>
+				</div>
+				<a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+			</div>	
+		</div>
+
+	</section>
+	<section id="banner" class="section-m1">
+		<h3>Buy your favourites</h3>
+		<h1>Up to <span>30% Off</span> on all Sweets</h1>
+	</section>
+	<footer class="section-p1">
+		<div class="col">
+			<!-- <img class="logo" src="images/logo1.png" alt="logo" height="60" > -->
+			<h4>Contact</h4>
+			<p><strong>Adress:</strong>532 MG Road, Street 29, Bengaluru </p>
+			<p><strong>Phone:</strong>08198-229312/(+91)93xxxxx785</p>
+			<p><strong>Hours:</strong>8:00 - 20:00 Mon-Sat</p>
+			<div class="follow">
+				<h4>Follow us</h4>
+				<div class="icons">
+					<i class="fab fa-facebook"></i>
+					<i class="fab fa-twitter"></i>
+					<i class="fab fa-instagram"></i>
+					<i class="fab fa-youtube"></i>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<h4>About</h4>
+			<a href="#">About Us</a>
+			<a href="#">Delivery Information</a>
+			<a href="#">Privacy Policy</a>
+			<a href="#">Terms & Conditions</a>
+			<a href="#">Contact Us</a>
+		</div>
+		<div class="col">
+			<h4>My Account</h4>
+			<a href="#">Sign In</a>
+			<a href="#">View Cart</a>
+			<a href="#">Help</a>
+		</div>
+		<div class="copyright">
+			<hr><hr>
+			<br>
+			<p>&copy; Copyright 2023, Devdar Sweets</p>
+		</div>
+		
+
+	</footer>
+
+    <!-- <nav class="navbar navbar-expand-lg bg-light">
+        <h2 id="greet"></h2>
+        <form class="d-flex">
+            <button class="btn btn-outline-success" type="button" id="signoutbutton">Sign Out</button>
+        </form>
+</nav> -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script>
+let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+
+let GreetHead = document.getElementById('greet');
+let SignoutBtn = document.getElementById('signoutbutton');
+
+
+let CheckCred = () => {
+    if (!sessionStorage.getItem("user-creds")) {
+        window.location.href = 'index.html';
+    } else {
+        // GreetHead.innerText = `Hii ${UserInfo.username}!  `;
+        let usernameElement = document.getElementById('username');
+        usernameElement.innerText = `Welcome, ${UserInfo.username}`;
+    }
+}
+
+let SignoutLink = document.getElementById('signoutlink'); // Get the sign-out link element
+
+let Signout = () => {
+    sessionStorage.removeItem("user-creds");
+    sessionStorage.removeItem("user-info");
+    window.location.href = 'index.html';
+}
+
+
+window.addEventListener('load', () => {
+    CheckCred();
+    SignoutLink.addEventListener('click', Signout); // Add event listener for the sign-out link
+});
+
+
+</script>
+
+</body>
+</html>

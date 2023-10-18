@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/1ff2bafd28.js" crossorigin="anonymous"></script>
+    <style>
+@import url('httpps://fonts.googleapis.com/css2?family=Spartan:weight@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+h4, h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+#page-header {
+    background-image: url('https://ds393qgzrxwzn.cloudfront.net/cat1/img/images/0/kydmI9hj6e.jpg');
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background-color: #E3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#header a.logo {
+    display: flex;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: blue;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+.closeShopping{
+    position: relative;
+    left: 400px;
+    bottom:60px;
+    height: 50px;
+    width: 40px;
+}
+
+#mobile {
+    display: none;
+    align-items: center;
+}
+
+#close {
+    display: none;
+}
+
+@media (max-width: 799px) {
+    #header {
+        padding: 10px 30px;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #e3e6f3;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active {
+        right: 0px;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    /* #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        font-size: 24px;
+    } */
+
+}
+
+@media (max-width: 477px) {
+    #header {
+        padding: 10px 30px;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 100%;
+        background-color: #e3e6f3;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active {
+        right: 0;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    /* #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #8f5858;
+        font-size: 24px;
+    } */
+
+
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    transition: 0.5s;
+}
+#lg-bag{
+list-style: none;
+
+}
+.head {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 10px;
+}
+
+.head .shopping {
+    position: relative;
+    text-align: right;
+}
+
+.head .shopping img {
+    width: 50px;
+}
+
+.head .shopping span {
+    background: red;
+    border-radius: 40%;
+    color: #ffffff;
+    position: absolute;
+    top: -5px;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px;
+}
+
+.list .item {
+    text-align: center;
+    background-color: rgb(221, 221, 219);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    letter-spacing: 1px;
+}
+
+.list .item img {
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+}
+
+.list .item img:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+.list .item .title {
+    font-weight: 600;
+}
+
+.list .item .price {
+    margin: 10px;
+}
+
+.list .item button {
+    background-color: #251c1c;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+}
+
+.card {
+    position: fixed;
+    top: 75px;
+    left: 100%;
+    width: 500px;
+    background: linear-gradient(to right, #676e32, #4a7b99);
+    height: 90vh;
+    transition: left 0.5s, background-color 0.3s, transform 0.5s;
+    
+}
+
+
+.active .card {
+    left: calc(100% - 500px);
+}
+
+.active .container {
+    transform: translateX(-200px);
+}
+
+.card h1 {
+    color: #E8BC0E;
+    font-weight: 100;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.card .checkOut {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card .checkOut div {
+    background-color: #E8BC0E;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card .checkOut div:nth-child(2) {
+    background-color: #1C1F25;
+    color: #fff;
+}
+
+.listCard li {
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+}
+
+.listCard li div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listCard li img {
+    width: 90%;
+}
+
+.listCard li button {
+    background-color: #fff5;
+    border: none;
+}
+
+.listCard .count {
+    margin: 0 10px;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #E3E6F3;
+    padding: 40px 80px;
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .follow {
+    margin-top: 10px;
+}
+
+footer .follow i {
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+footer .follow i:hover,
+footer a:hover {
+    color: #0512ff;
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <a href="#" class="logo"> <i class="fa-solid fa-cookie-bite"></i> <strong>DEVDAR </strong>Sweets </a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <span id="username"></span> 
+                <li><a href="#" id="signoutlink">Sign Out</a></li>                <!-- <li ><a href="./SignIn/signIn.html">Sign in</a></li> -->
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="head">
+                <div class="shopping">
+                    <li id="lg-bag"><i class="fa-solid fa-cart-shopping"></i></li>
+                    <span class="quantity">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping" ></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header">
+        <h2>Super value offers</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, non tempore.</p>
+    </section>
+
+    <div class="list">
+        <!-- JavaScript will add products dynamically here -->
+    </div>
+
+    <div class="card">
+        <h1>My Cart</h1>
+        <div class="closeShopping"><img  src="circle-xmark-regular.svg"></div>
+        <ul class="listCard"></ul>
+        <div class="checkOut">
+            <div class="total1">Total</div>
+            <div class="total">0</div>
+            
+        </div>
+    </div><br>
+
+    <!-- Footer Section -->
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 532 MG Road, Street 29, Bengaluru</p>
+            <p><strong>Phone:</strong> 08198-229312/(+91)93xxxxx785</p>
+            <p><strong>Hours:</strong> 8:00 - 20:00 Mon-Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="copyright">
+            <hr><hr>
+            <br>
+            <p>&copy; 2023, Devdar Sweets</p>
+        </div>
+    </footer>
+
+<script >
+
+let list = document.querySelector('.list');
+let listCard = document.querySelector('.listCard');
+let body = document.querySelector('body');
+let total = document.querySelector('.total');
+let quantity = document.querySelector('.quantity');
+let shopping = document.querySelector('.shopping');
+let closeShopping = document.querySelector('.closeShopping');
+
+shopping.addEventListener('click', () => {
+    body.classList.add('active');
+});
+
+closeShopping.addEventListener('click', () => {
+    body.classList.remove('active');
+});
+
+let products = [
+    { id: 1,
+        name: 'Motichoor laddu',
+        image: 'https://i.postimg.cc/h4krd7qx/800389791-1-anand-sweets-and-savouries-sweets-motichoor-laddu.webp',
+        price: 120000
+    },
+    {
+        id: 2,
+        name: 'Kaaju Katli',
+        image: 'https://i.postimg.cc/XNTDKY5M/0ee1479c-d032-4822-89d2-3d008e78ec5c.jpg',
+        price: 120000
+    },
+    {
+        id: 3,
+        name: 'Mysore Pak',
+        image: 'https://i.postimg.cc/zG9B8Wbt/OIP.jpg',
+        price: 120000
+    },
+    {
+        id: 4,
+        name: 'Dharwad Peda',
+        image: 'https://i.postimg.cc/dDPHJ5FQ/dharwad-peda-500x500.webp',
+        price: 120000
+    },
+    {
+        id: 5,
+        name: 'Champakali',
+        image: 'https://i.postimg.cc/T1G0SpJh/OIP.jpg',
+        price: 120000
+    },
+    {
+        id: 6,
+        name: 'PRODUCT NAME 6',
+        image: 'https://i.postimg.cc/52G3JPSh/R.jpg',
+        price: 120000
+    },
+    {
+        id: 7,
+        name: 'PRODUCT NAME 7',
+        image: 'https://i.postimg.cc/Ss4cQH2v/OIP.jpg',
+        price: 120000
+    },
+    {
+        id: 8,
+        name: 'PRODUCT NAME 8',
+        image: 'https://i.postimg.cc/Z5rRYn8J/Dry-Fruit-3-1-1536x1536.jpg',
+        price: 120000
+    },
+    // Add other products here...
+];
+
+let listCards = [];
+
+function initApp() {
+    products.forEach((value, key) => {
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('item');
+        newDiv.innerHTML = `
+            <img src="${value.image}">
+            <div class="title">${value.name}</div>
+            <div class="price">${value.price.toLocaleString()}</div>
+            <button onclick="addToCard(${key})">Add To Cart</button>`;
+        list.appendChild(newDiv);
+    });
+}
+
+function addToCard(key) {
+    if (listCards[key] == null) {
+        listCards[key] = JSON.parse(JSON.stringify(products[key]));
+        listCards[key].quantity = 1;
+        let buttons = document.querySelectorAll('.item button');
+        buttons[key].innerText = 'Item Added';
+    }
+    reloadCard();
+}
+
+function reloadCard() {
+    listCard.innerHTML = '';
+    let count = 0;
+    let totalPrice = 0;
+    listCards.forEach((value, key) => {
+        if (value != null) {
+            let newDiv = document.createElement('li');
+            newDiv.innerHTML = `
+                <div><img src="${value.image}"/></div>
+                <div>${value.name}</div>
+                <div>${value.price.toLocaleString()}</div>
+                <div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <div class="count">${value.quantity}</div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                </div>`;
+            listCard.appendChild(newDiv);
+            totalPrice += value.price;
+            count += value.quantity;
+        }
+    });
+    total.innerText = totalPrice.toLocaleString();
+    quantity.innerText = count;
+}
+
+function changeQuantity(key, quantity) {
+    if (quantity == 0) {
+        delete listCards[key];
+        let buttons = document.querySelectorAll('.item button');
+        buttons[key].innerText = 'Add To Cart';
+    } else {
+        listCards[key].quantity = quantity;
+        listCards[key].price = quantity * products[key].price;
+    }
+    reloadCard();
+}
+
+initApp();
+
+// ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+// login and logout
+let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+
+let GreetHead = document.getElementById('greet');
+let SignoutBtn = document.getElementById('signoutbutton');
+
+
+let CheckCred = () => {
+    if (!sessionStorage.getItem("user-creds")) {
+        window.location.href = 'shop.html';
+    } else {
+        // GreetHead.innerText = `Hii ${UserInfo.username}!  `;
+        let usernameElement = document.getElementById('username');
+        usernameElement.innerText = `Welcome, ${UserInfo.username}`;
+    }
+}
+
+let SignoutLink = document.getElementById('signoutlink'); // Get the sign-out link element
+
+let Signout = () => {
+    sessionStorage.removeItem("user-creds");
+    sessionStorage.removeItem("user-info");
+    window.location.href = 'shop.html';
+}
+
+
+window.addEventListener('load', () => {
+    CheckCred();
+    SignoutLink.addEventListener('click', Signout); // Add event listener for the sign-out link
+});
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<!-- Add Bootstrap and Popper.js JavaScript here -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
