@@ -169,78 +169,59 @@
 		</div>
 	</footer>
 
-<script>
-
-    const bar = document.getElementById('bar');
-    const close = document.getElementById('close');
-    const nav = document.getElementById('navbar');
-
-    if(bar) {
-    bar.addEventListener('click', () => {
-        nav.classList.add('active');
-    })
-    }
-
-    if(close) {
-    close.addEventListener('click', () => {
-        nav.classList.remove('active')
-    })
-	}
-</script>
-
-<script>
-	let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
-	let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
-
-	let GreetHead = document.getElementById('greet');
-	let Navbar = document.getElementById('navbar');
-	let SignoutBtn; // declare SignoutBtn outside functions to access it globally
-	let CreateAccountLink; // declare CreateAccountLink outside functions to access it globally
-
-	let Signout = () => {
-		sessionStorage.removeItem("user-creds");
-		sessionStorage.removeItem("user-info");
-		GreetHead.innerText = '';
-		if (SignoutBtn) {
-			SignoutBtn.style.display = 'none'; // hide the sign-out link
-		}
-		if (CreateAccountLink) {
-			CreateAccountLink.innerText = 'Login';
-			CreateAccountLink.href = 'login.html';
-			CreateAccountLink.style.display = 'block'; // display the create account link
-			CreateAccountLink.classList.add('navbar-link'); // add the appropriate class for styling
-		}
-	}
-
-	let CheckCred = () => {
-		if (UserCreds) {
-			GreetHead.innerText = `Hii ${UserInfo.username}!  `;
-			const navbarItem = document.createElement('li');
-
-			// Sign out link
-			SignoutBtn = document.createElement('a');
-			SignoutBtn.href = '#';
-			SignoutBtn.innerText = 'Sign Out';
-			SignoutBtn.onclick = Signout;
-			SignoutBtn.classList.add('navbar-link'); 
-			navbarItem.appendChild(SignoutBtn);
-
-			// Create account link
-			CreateAccountLink = document.createElement('a');
-			CreateAccountLink.style.display = 'none'; 
-			CreateAccountLink.classList.add('navbar-link'); 
-			Navbar.appendChild(navbarItem);
-			Navbar.appendChild(CreateAccountLink);
-		} else {
-			CreateAccountLink = document.createElement('a');
-			CreateAccountLink.href = 'login.html'; 
-			CreateAccountLink.innerText = 'Login';
-			CreateAccountLink.classList.add('navbar-link');
-			Navbar.appendChild(CreateAccountLink);
-		}
-	};
-
-	window.addEventListener('load', CheckCred);
-</script>
+  <script>
+        let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+        let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+    
+        let GreetHead = document.getElementById('greet');
+        let Navbar = document.getElementById('navbar');
+        let SignoutBtn; // declare SignoutBtn outside functions to access it globally
+        let CreateAccountLink; // declare CreateAccountLink outside functions to access it globally
+    
+        let Signout = () => {
+            sessionStorage.removeItem("user-creds");
+            sessionStorage.removeItem("user-info");
+            GreetHead.innerText = '';
+            if (SignoutBtn) {
+                SignoutBtn.style.display = 'none'; // hide the sign-out link
+            }
+            if (CreateAccountLink) {
+                CreateAccountLink.innerText = 'Login';
+                CreateAccountLink.href = 'login.html';
+                CreateAccountLink.style.display = 'block'; // display the create account link
+                CreateAccountLink.classList.add('navbar-link'); // add the appropriate class for styling
+            }
+        }
+    
+        let CheckCred = () => {
+            if (UserCreds) {
+                GreetHead.innerText = `Hii ${UserInfo.username}!  `;
+                const navbarItem = document.createElement('li');
+    
+                // Sign out link
+                SignoutBtn = document.createElement('a');
+                SignoutBtn.href = '#'; // replace with the appropriate link
+                SignoutBtn.innerText = 'Sign Out';
+                SignoutBtn.onclick = Signout;
+                SignoutBtn.classList.add('navbar-link'); // add the appropriate class for styling
+                navbarItem.appendChild(SignoutBtn);
+    
+                // Create account link
+                CreateAccountLink = document.createElement('a');
+                CreateAccountLink.style.display = 'none'; // hide the link by default
+                CreateAccountLink.classList.add('navbar-link'); // add the appropriate class for styling
+                Navbar.appendChild(navbarItem);
+                Navbar.appendChild(CreateAccountLink);
+            } else {
+                CreateAccountLink = document.createElement('a');
+                CreateAccountLink.href = 'login.html'; // Replace with the appropriate link
+                CreateAccountLink.innerText = 'Login';
+                CreateAccountLink.classList.add('navbar-link'); // add the appropriate class for styling
+                Navbar.appendChild(CreateAccountLink);
+            }
+        };
+    
+        window.addEventListener('load', CheckCred);
+    </script>
 </body>
 </html>
