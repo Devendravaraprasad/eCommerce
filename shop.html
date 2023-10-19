@@ -46,7 +46,7 @@ p {
 }
 
 #page-header {
-    background-image: url('https://ds393qgzrxwzn.cloudfront.net/cat1/img/images/0/kydmI9hj6e.jpg');
+    /* background-image: url('https://ds393qgzrxwzn.cloudfront.net/cat1/img/images/0/kydmI9hj6e.jpg'); */
     width: 100%;
     height: 40vh;
     background-size: cover;
@@ -55,7 +55,35 @@ p {
     text-align: center;
     flex-direction: column;
     padding: 14px;
+    animation: homeChange 30s linear infinite;
 }
+@keyframes homeChange{
+    0%{ 
+      background-image: url(images/one.png);
+    }
+    20%{ 
+      background-image: url(images/two.png);
+    }
+    25%{ 
+      background-image: url(images/three.png);
+    }
+    45%{ 
+      background-image: url(images/four.png);
+    }
+    50%{ 
+      background-image: url(images/five.png);
+    }
+    70%{ 
+      background-image: url(images/six.png);
+    }
+    75%{ 
+      
+      background-image: url(images/seven.png);
+    }
+    95%{ 
+      background-image: url(images/eight.png);
+    }
+  }
 
 #header {
     display: flex;
@@ -77,7 +105,6 @@ p {
     font-weight: bold;
 }
 
-
 #navbar {
     display: flex;
     align-items: center;
@@ -87,11 +114,10 @@ p {
 #navbar li {
     list-style: none;
     padding: 0 20px;
-    position: relative;
+    position: sticky;
 }
 
 #navbar li a {
-
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
@@ -117,6 +143,7 @@ p {
 }
 .closeShopping{
     position: relative;
+    margin-top: 10px;
     left: 400px;
     bottom:60px;
     height: 50px;
@@ -130,109 +157,6 @@ p {
 
 #close {
     display: none;
-}
-
-@media (max-width: 799px) {
-    #header {
-        padding: 10px 30px;
-    }
-
-    #navbar {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        position: fixed;
-        top: 0;
-        right: -300px;
-        height: 100vh;
-        width: 300px;
-        background-color: #e3e6f3;
-        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
-        padding: 80px 0 0 10px;
-        transition: 0.3s;
-    }
-
-    #navbar.active {
-        right: 0px;
-    }
-
-    #navbar li {
-        margin-bottom: 25px;
-    }
-
-    #mobile {
-        display: flex;
-        align-items: center;
-    }
-
-    #mobile i {
-        color: #1a1a1a;
-        font-size: 24px;
-        padding-left: 20px;
-    }
-
-    /* #close {
-        display: initial;
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        color: #222;
-        font-size: 24px;
-    } */
-
-}
-
-@media (max-width: 477px) {
-    #header {
-        padding: 10px 30px;
-    }
-
-    #navbar {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 100%;
-        background-color: #e3e6f3;
-        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
-        padding: 80px 0 0 10px;
-        transition: 0.3s;
-    }
-
-    #navbar.active {
-        right: 0;
-    }
-
-    #navbar li {
-        margin-bottom: 25px;
-    }
-
-    #mobile {
-        display: flex;
-        align-items: center;
-    }
-
-    #mobile i {
-        color: #1a1a1a;
-        font-size: 24px;
-        padding-left: 20px;
-    }
-
-    /* #close {
-        display: initial;
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        color: #8f5858;
-        font-size: 24px;
-    } */
-
-
 }
 
 .container {
@@ -314,10 +238,10 @@ list-style: none;
     top: 75px;
     left: 100%;
     width: 500px;
-    background: linear-gradient(to right, #676e32, #4a7b99);
+    background: linear-gradient(to right, #e4dcdc, #a1a1b4);
     height: 90vh;
     transition: left 0.5s, background-color 0.3s, transform 0.5s;
-    
+    overflow-y: scroll;
 }
 
 
@@ -330,25 +254,28 @@ list-style: none;
 }
 
 .card h1 {
-    color: #E8BC0E;
-    font-weight: 100;
-    margin: 0;
-    padding: 0 20px;
-    height: 80px;
-    display: flex;
+    color: #000000;
+    font-size: 30px;
+    margin-top: 10px;
+    text-align: center;
     align-items: center;
+    padding: 0 20px;
+    /* height: 80px; */
+   
+    
 }
 
+
 .card .checkOut {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .card .checkOut div {
-    background-color: #E8BC0E;
+    background-color: #8a05e3;
     width: 100%;
     height: 70px;
     display: flex;
@@ -442,26 +369,134 @@ footer .copyright {
     margin-top: 10px;
 }
 
+@media (max-width: 799px) {
+    #header {
+        padding: 10px 30px;
+    }
 
-    </style>
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #e3e6f3;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active {
+        right: 0px;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+    }
+    #close{
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 477px) {
+    #header {
+        padding: 10px 30px;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 100%;
+        background-color: #e3e6f3;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active {
+        right: 0;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+    }
+    #page-header {
+        width: 100%;
+        background-size: cover;
+    }
+    .list {
+        display: block;
+        column-gap: 20px;
+    }
+    .list .item {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    }
+   
+}
+
+
+</style>
+
 </head>
 
 <body>
     <section id="header">
-        <a href="#" class="logo"> <i class="fa-solid fa-cookie-bite"></i> <strong>DEVDAR </strong>Sweets </a>
+        <a href="index.html" class="logo"> <i class="fa-solid fa-cookie-bite"></i> <strong>DEVDAR </strong> Sweets </a>
         <div>
             <ul id="navbar">
                 <li><a href="index.html">Home</a></li>
                 <li><a class="active" href="shop.html">Shop</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a id="userlink" class="nav-link" href="signup.html">Create New Account</a></li>
-                <li><a id="signoutlink" class="nav-link" href="login.html">Login</a></li>
-                <!-- <li ><a href="./SignIn/signIn.html">Sign in</a></li> -->
+                <h4 id="greet" class="user-greeting"></h4>
                 <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
             </ul>
         </div>
 
+        <div id="mobile">
+			<i id="bar" class="fas fa-outdent"></i>
+		</div>
+    </section>
+    <section id="cart">
         <div class="container">
             <div class="head">
                 <div class="shopping">
@@ -470,13 +505,7 @@ footer .copyright {
                 </div>
             </div>
         </div>
-
-        <div id="mobile">
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping" ></i></a>
-            <i id="bar" class="fas fa-outdent"></i>
-        </div>
     </section>
-
     <section id="page-header">
         <h2>Super value offers</h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, non tempore.</p>
@@ -488,14 +517,15 @@ footer .copyright {
 
     <div class="card">
         <h1>My Cart</h1>
-        <div class="closeShopping"><img  src="circle-xmark-regular.svg"></div>
+        <div class="closeShopping"><img  src="https://i.postimg.cc/jdcyTVBk/circle-xmark-regular.png" height="40" width="40"></div>
         <ul class="listCard"></ul>
         <div class="checkOut">
             <div class="total1">Total</div>
             <div class="total">0</div>
-            
+            <!-- <button href="cod.html" >Checkout</button> -->
+            <input type="button" value="Checkout" href="cod.html">
         </div>
-    </div><br>
+    </div>
 
     <!-- Footer Section -->
     <footer class="section-p1">
@@ -536,7 +566,21 @@ footer .copyright {
     </footer>
 
 <script >
+    const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const nav = document.getElementById('navbar');
 
+    if(bar) {
+    bar.addEventListener('click', () => {
+        nav.classList.add('active');
+    })
+    }
+
+    if(close) {
+    close.addEventListener('click', () => {
+        nav.classList.remove('active')
+    })
+}
 let list = document.querySelector('.list');
 let listCard = document.querySelector('.listCard');
 let body = document.querySelector('body');
@@ -557,54 +601,54 @@ let products = [
     { id: 1,
         name: 'Motichoor laddu',
         image: 'https://i.postimg.cc/h4krd7qx/800389791-1-anand-sweets-and-savouries-sweets-motichoor-laddu.webp',
-        price: 120000
+        price: 630
     },
     {
         id: 2,
         name: 'Kaaju Katli',
         image: 'https://i.postimg.cc/XNTDKY5M/0ee1479c-d032-4822-89d2-3d008e78ec5c.jpg',
-        price: 120000
+        price: 1100
     },
     {
         id: 3,
         name: 'Mysore Pak',
         image: 'https://i.postimg.cc/zG9B8Wbt/OIP.jpg',
-        price: 120000
+        price: 800
     },
     {
         id: 4,
         name: 'Dharwad Peda',
         image: 'https://i.postimg.cc/dDPHJ5FQ/dharwad-peda-500x500.webp',
-        price: 120000
+        price: 500
     },
     {
         id: 5,
         name: 'Champakali',
         image: 'https://i.postimg.cc/T1G0SpJh/OIP.jpg',
-        price: 120000
+        price: 450
     },
     {
         id: 6,
-        name: 'PRODUCT NAME 6',
+        name: 'Rasgulla',
         image: 'https://i.postimg.cc/52G3JPSh/R.jpg',
-        price: 120000
+        price: 700
     },
     {
         id: 7,
-        name: 'PRODUCT NAME 7',
+        name: 'Dhood Peda',
         image: 'https://i.postimg.cc/Ss4cQH2v/OIP.jpg',
-        price: 120000
+        price: 900
     },
     {
         id: 8,
-        name: 'PRODUCT NAME 8',
+        name: 'Dry Fruit Laddu',
         image: 'https://i.postimg.cc/Z5rRYn8J/Dry-Fruit-3-1-1536x1536.jpg',
-        price: 120000
+        price: 2000
     },
-    // Add other products here...
 ];
 
-let listCards = [];
+let listCards = JSON.parse(sessionStorage.getItem('listCards')) || [];
+
 
 function initApp() {
     products.forEach((value, key) => {
@@ -625,6 +669,9 @@ function addToCard(key) {
         listCards[key].quantity = 1;
         let buttons = document.querySelectorAll('.item button');
         buttons[key].innerText = 'Item Added';
+        if (key === 3) {
+            buttons[key].innerText = 'Added to Cart';
+        }
     }
     reloadCard();
 }
@@ -653,12 +700,14 @@ function reloadCard() {
     total.innerText = totalPrice.toLocaleString();
     quantity.innerText = count;
 }
-
 function changeQuantity(key, quantity) {
-    if (quantity == 0) {
+    if (quantity === 0) {
         delete listCards[key];
         let buttons = document.querySelectorAll('.item button');
         buttons[key].innerText = 'Add To Cart';
+        if (key === 3) {
+            buttons[key].innerText = 'Add To Cart';
+        }
     } else {
         listCards[key].quantity = quantity;
         listCards[key].price = quantity * products[key].price;
@@ -666,64 +715,74 @@ function changeQuantity(key, quantity) {
     reloadCard();
 }
 
-initApp();
+ function saveCartToSessionStorage() {
+            sessionStorage.setItem('listCards', JSON.stringify(listCards));
+        }
 
-// ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        window.addEventListener('beforeunload', saveCartToSessionStorage);
 
-// login and logout
-let userlink = document.getElementById('userlink');
-    let signoutlink = document.getElementById('signoutlink');
-    let header = document.getElementById('hh');
-    var currentUser = null;
+        window.addEventListener('load', () => {
+            initApp();
+            reloadCard();
+        });
 
-    function getUsername() {
-      let keepLoggedIn = localStorage.getItem("keepLoggedIn");
-
-      if (keepLoggedIn == "yes") {
-        currentUser = JSON.parse(localStorage.getItem('user'));
-      } else {
-        currentUser = JSON.parse(sessionStorage.getItem('user'));
-      }
-    }
-
-    function Signout() {
-      sessionStorage.removeItem('user');
-      localStorage.removeItem('user');
-      localStorage.removeItem('keepLoggedIn');
-      window.location = "shop1.html";
-    }
-    
-
-    window.onload = function () {
-      getUsername();
-      if (currentUser == null) {
-        // userlink.innerText = "Create New Account";
-        userlink.classList.replace("nav-link", "btn");
-        userlink.classList.add("btn-primary");
-        userlink.href = "signup.html";
-
-        // signoutlink.innerText = "Login";
-        signoutlink.classList.replace("nav-link", "btn");
-        signoutlink.classList.add("btn-success");
-        signoutlink.href = "login.html";
-      } else {
-        userlink.innerText = currentUser.username;
-        header.innerText = "Welcome " + currentUser.fullname;
-        userlink.classList.replace("btn", "nav-link");
-        userlink.classList.remove("btn-primary");
-        userlink.href = "#";
-
-        signoutlink.innerText = "Sign Out";
-        signoutlink.classList.replace("btn", "nav-link");
-        signoutlink.classList.remove("btn-success");
-        signoutlink.href = "javascript:Signout()";
-      }
-    }
 </script>
-<!-- Add Bootstrap and Popper.js JavaScript here -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+<!-- username display -->
+<script>
+    let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+    let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+
+    let GreetHead = document.getElementById('greet');
+    let Navbar = document.getElementById('navbar');
+    let SignoutBtn; // declare SignoutBtn outside functions to access it globally
+    let CreateAccountLink; // declare CreateAccountLink outside functions to access it globally
+
+    let Signout = () => {
+        sessionStorage.removeItem("user-creds");
+        sessionStorage.removeItem("user-info");
+        GreetHead.innerText = '';
+        if (SignoutBtn) {
+            SignoutBtn.style.display = 'none'; // hide the sign-out link
+        }
+        if (CreateAccountLink) {
+            CreateAccountLink.innerText = 'Login';
+            CreateAccountLink.href = 'login.html';
+            CreateAccountLink.style.display = 'block'; 
+            CreateAccountLink.classList.add('navbar-link'); 
+        }
+    }
+
+    let CheckCred = () => {
+        if (UserCreds) {
+            GreetHead.innerText = `Hii ${UserInfo.username}!  `;
+            const navbarItem = document.createElement('li');
+
+            // Sign out link
+            SignoutBtn = document.createElement('a');
+            SignoutBtn.href = '#'; 
+            SignoutBtn.innerText = 'Sign Out';
+            SignoutBtn.onclick = Signout;
+            SignoutBtn.classList.add('navbar-link'); 
+            navbarItem.appendChild(SignoutBtn);
+
+            // Create account link
+            CreateAccountLink = document.createElement('a');
+            CreateAccountLink.style.display = 'none';
+            CreateAccountLink.classList.add('navbar-link'); 
+            Navbar.appendChild(navbarItem);
+            Navbar.appendChild(CreateAccountLink);
+        } else {
+            CreateAccountLink = document.createElement('a');
+            CreateAccountLink.href = 'login.html';
+            CreateAccountLink.innerText = 'Login';
+            CreateAccountLink.classList.add('navbar-link'); 
+            Navbar.appendChild(CreateAccountLink);
+        }
+    };
+
+    window.addEventListener('load', CheckCred);
+</script>
+<!-- ------------------------------------- -->
 </body>
 
 </html>
