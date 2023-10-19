@@ -133,29 +133,29 @@ body{
 }
 @keyframes homeChange{
     0%{ 
-      background-image: url(images/one.png);
+      background-image: url(one.png);
     }
     20%{ 
-      background-image: url(images/two.png);
+      background-image: url(two.png);
     }
     30%{ 
-      background-image: url(images/three.png);
+      background-image: url(three.png);
     }
     45%{ 
-      background-image: url(images/four.png);
+      background-image: url(four.png);
     }
     55%{ 
-      background-image: url(images/five.png);
+      background-image: url(five.png);
     }
     70%{ 
-      background-image: url(images/six.png);
+      background-image: url(six.png);
     }
     80%{ 
       
-      background-image: url(images/seven.png);
+      background-image: url(seven.png);
     }
     95%{ 
-      background-image: url(images/eight.png);
+      background-image: url(eight.png);
     }
   }
 
