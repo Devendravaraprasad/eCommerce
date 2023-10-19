@@ -9,20 +9,18 @@
 </head>
 <body>
 	<section id="header">
-		<a href="#" class="logo"> <i class="fa-solid fa-cookie-bite"></i> <strong>DEVDAR </strong>Sweets </a>
+		<a href="index.html" class="logo"> <i class="fa-solid fa-cookie-bite"></i> <strong>DEVDAR </strong>Sweets </a>
 		<div>
 			<ul id="navbar">
 				<li><a href="index.html">Home</a></li>
 				<li><a href="shop.html">Shop</a></li>
 				<li><a href="about.html">About</a></li>
 				<li><a class="active" href="contact.html">Contact</a></li>
-				<!-- <li><a href="./SignIn/signIn.html">Sign in</a></li> -->
-				<li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <h5 id="greet" class="user-greeting"></h5>
 				<a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
 			</ul>
 		</div>
 		<div id="mobile">
-			<a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
 			<i id="bar" class="fas fa-outdent"></i>
 		</div>
 	</section>
@@ -138,6 +136,60 @@
                );
             }
      	</script>
+         <script>
+            let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+            let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+        
+            let GreetHead = document.getElementById('greet');
+            let Navbar = document.getElementById('navbar');
+            let SignoutBtn; // declare SignoutBtn outside functions to access it globally
+            let CreateAccountLink; // declare CreateAccountLink outside functions to access it globally
+        
+            let Signout = () => {
+                sessionStorage.removeItem("user-creds");
+                sessionStorage.removeItem("user-info");
+                GreetHead.innerText = '';
+                if (SignoutBtn) {
+                    SignoutBtn.style.display = 'none'; // hide the sign-out link
+                }
+                if (CreateAccountLink) {
+                    CreateAccountLink.innerText = 'Login';
+                    CreateAccountLink.href = 'login.html';
+                    CreateAccountLink.style.display = 'block'; // display the create account link
+                    CreateAccountLink.classList.add('navbar-link'); // add the appropriate class for styling
+                }
+            }
+        
+            let CheckCred = () => {
+                if (UserCreds) {
+                    GreetHead.innerText = `Hii ${UserInfo.username}!  `;
+                    const navbarItem = document.createElement('li');
+        
+                    // Sign out link
+                    SignoutBtn = document.createElement('a');
+                    SignoutBtn.href = '#'; // replace with the appropriate link
+                    SignoutBtn.innerText = 'Sign Out';
+                    SignoutBtn.onclick = Signout;
+                    SignoutBtn.classList.add('navbar-link'); // add the appropriate class for styling
+                    navbarItem.appendChild(SignoutBtn);
+        
+                    // Create account link
+                    CreateAccountLink = document.createElement('a');
+                    CreateAccountLink.style.display = 'none'; // hide the link by default
+                    CreateAccountLink.classList.add('navbar-link'); // add the appropriate class for styling
+                    Navbar.appendChild(navbarItem);
+                    Navbar.appendChild(CreateAccountLink);
+                } else {
+                    CreateAccountLink = document.createElement('a');
+                    CreateAccountLink.href = 'login.html'; // Replace with the appropriate link
+                    CreateAccountLink.innerText = 'Login';
+                    CreateAccountLink.classList.add('navbar-link'); // add the appropriate class for styling
+                    Navbar.appendChild(CreateAccountLink);
+                }
+            };
+        
+            window.addEventListener('load', CheckCred);
+        </script>
 </body>
 
 
